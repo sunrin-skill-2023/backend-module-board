@@ -1,7 +1,7 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { grpcClientOptions } from './grpc.option';
+import { grpcClientOptions } from 'shared/src/options/board.option';
 
 export const serviceHost = 'localhost';
 export const servicePort = 10001;

@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { GrpcReflectionModule } from 'nestjs-grpc-reflection';
-import { grpcClientOptions } from './grpc.option';
-import { HelloModule } from './hello/hello.module';
+import { grpcClientOptions } from 'shared/src/options/board.option';
+import { DatabaseModule } from './database.module';
+import { BoardModule } from './board/board.module';
 
 @Module({
   imports: [
@@ -11,7 +12,8 @@ import { HelloModule } from './hello/hello.module';
       envFilePath: [`.env`],
     }),
     GrpcReflectionModule.register(grpcClientOptions),
-    HelloModule,
+    DatabaseModule,
+    BoardModule,
   ],
   controllers: [],
   providers: [],
